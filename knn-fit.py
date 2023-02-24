@@ -1,0 +1,20 @@
+# Import KNeighborsClassifier from sklearn.neighbors.
+# Create an array called X containing values from the "account_length" and "customer_service_calls" columns, and an array called y for the values of the "churn" column.
+# Instantiate a KNeighborsClassifier called knn with 6 neighbors.
+# Fit the classifier to the data using the .fit() method.
+
+
+# Import KNeighborsClassifier
+from sklearn.neighbors import KNeighborsClassifier
+
+# Create arrays for the features and the target variable
+y = churn_df["churn"].values
+X = churn_df[["account_length", "customer_service_calls"]].values
+
+# Create a KNN classifier with 6 neighbors
+knn = KNeighborsClassifier(n_neighbors=6)
+
+# Fit the classifier to the data
+knn.fit(X, y)
+
+
